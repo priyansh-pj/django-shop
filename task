@@ -1,0 +1,15 @@
+Store
+    Inventory
+        -Curd
+        -Database Schema
+
+User
+    - Curd
+    - Abstract user
+    Authentication
+        -Authentication
+
+Admin 
+    - user list
+    - user curd
+
