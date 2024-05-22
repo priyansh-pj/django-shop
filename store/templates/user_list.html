@@ -1,0 +1,25 @@
+{% extends 'base.html' %} 
+{% block content %}
+<h2 class="heading">User List</h2>
+<table style="border: solid #34658ff0;" class="table">
+  <thead class="thead-light">
+    <tr>
+      <th scope="col">S.No</th>
+      <th scope="col">Username</th>
+      <th scope="col">Email</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  {% for user in users %}
+  <tr>
+    <td scope="row">{{ forloop.counter }}</td>
+    <td>{{ user.username }}</td>
+    <td>{{ user.email }}</td>
+    <td>
+      <a class="btn btn-warning" href="{% url 'user_update' user.id %}">Edit</a>
+      <a class="btn btn-danger" href="{% url 'user_delete' user.id %}">Delete</a>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+{% endblock %}
